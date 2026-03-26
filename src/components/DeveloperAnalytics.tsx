@@ -171,7 +171,7 @@ export const DeveloperAnalytics = ({ agents }: { agents: Agent[] }) => {
 
     return rows.sort((a, b) => {
       if (sortKey === "name") return a.name.localeCompare(b.name);
-      return (b as Record<string, number>)[sortKey] - (a as Record<string, number>)[sortKey];
+      return (b as unknown as Record<string, number>)[sortKey] - (a as unknown as Record<string, number>)[sortKey];
     });
   }, [agents, calls, sortKey]);
 
